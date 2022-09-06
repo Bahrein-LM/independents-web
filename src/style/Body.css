@@ -1,0 +1,100 @@
+/* first-body */
+.firstBody{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+.carouselStyle{
+    width: 100%;
+    height: 640px;
+}
+.titleCarousel{
+    justify-content: center;
+    margin: 20px;
+}
+/* second-body */
+.secondBody{
+    width: 100%;
+    height: auto;
+    background-color: rgb(185, 8, 8);
+}
+.titleSecond{
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+.textSecond{
+    color: white;
+}
+.buttonStyle{
+    background-color: rgb(185, 8, 8);
+    color: yellow;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.commentCard{
+    background-color: white;
+    color: rgb(185, 8, 8);
+    width: auto;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.thirdBody{
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+.titleThird{
+    text-align: center;
+    color: rgb(185, 8, 8);
+    padding: 10px;
+}
+.formStyle{
+    width: 500px;
+    justify-content: center;
+}
+.sizeColumn{
+    height: 500px;
+}
+.linkStyle{
+    color: white;
+    text-decoration: none;
+}
+.linkStyle:hover{
+    color: white;
+}
+.cardStyle{
+    width: 270px;
+    height: auto;
+    background-color: rgb(185, 8, 8);
+    border: 0;    
+}
+
+.fourthBody{
+    width: 100%;
+    height: auto;
+    background-color: rgb(185, 8, 8);
+}
+.titleFourth{
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+.fourthMaps{
+    width: auto;
+    height: 500px;
+    border-radius: 10px;
+    margin: 20px;
+    border-color: white;
+    border: 10px;
+}
+.footer{
+    background-color: white;
+    text-align: center;
+    color: rgb(185, 8, 8);
+}
+.iconColors{
+    color: rgb(185, 8, 8);
+}
