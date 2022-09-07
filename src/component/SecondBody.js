@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, Form, Button, Card } from 'react-bootstrap';
 import axios from "axios";
-import { Sheet } from "../utils/constant";
+import { API_SHEET } from "../utils/constant";
 import  swal from "sweetalert";
 import '../style/Body.css';
 
@@ -16,7 +16,7 @@ const SecondBody = () => {
             Email: email,
             Comment: comment
         }
-        axios.post(Sheet, data).then((res) => {
+        axios.post(API_SHEET, data).then((res) => {
             //membersihkan form setelah input
             setEmail('');
             setComment('');
@@ -34,7 +34,7 @@ const SecondBody = () => {
     }
     useEffect(() => {
         const getData = async () =>{
-            const res = await axios.get(Sheet);
+            const res = await axios.get(API_SHEET);
             console.log(res.data);
             setAPIData(res.data);
         }

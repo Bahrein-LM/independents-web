@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import { Button, Form } from 'react-bootstrap';
 import '../style/Body.css';
-import { API } from "../utils/constant";
+import { API_NEWS } from "../utils/constant";
 import axios  from "axios";
 import { Card } from 'react-bootstrap';
 
@@ -10,7 +10,7 @@ const ThirdBody = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
         const getData = async () => {
-            const res = await axios.get(API);
+            const res = await axios.get(API_NEWS);
             console.log(res);
             setData(res.data.articles);
         }
