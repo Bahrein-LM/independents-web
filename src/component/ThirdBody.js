@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 // import { Button, Form } from 'react-bootstrap';
 import '../style/Body.css';
-import { API_NEWS } from "../utils/constant";
 import axios  from "axios";
 import { Card } from 'react-bootstrap';
 
 const ThirdBody = () => {
     
+    const YOUR_API_NEWS_KEY = "78ae9294b41342eea780897828e8147e";
+    const url = `https://newsapi.org/v2/top-headlines?country=id&category=sports&apiKey=${YOUR_API_NEWS_KEY}`;
+
     const [data, setData] = useState([]);
     useEffect(() => {
         const getData = async () => {
-            const res = await axios.get(API_NEWS);
+            const res = await axios.get(url);
             console.log(res);
             setData(res.data.articles);
         }
