@@ -56,13 +56,9 @@
     justify-content: center;
 }
 .sizeColumn{
-    height: 500px;
+    height: 350px;
 }
-.linkStyle{
-    color: white;
-    text-decoration: none;
-}
-.linkStyle:hover{
+.cardText{
     color: white;
 }
 .cardStyle{

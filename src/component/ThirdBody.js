@@ -1,47 +1,59 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 // import { Button, Form } from 'react-bootstrap';
 import '../style/Body.css';
 import axios  from "axios";
+// eslint-disable-next-line
 import { Card } from 'react-bootstrap';
 
-const ThirdBody = () => {
-    
-    const YOUR_API_NEWS_KEY = "78ae9294b41342eea780897828e8147e";
-    const url = `https://newsapi.org/v2/top-headlines?country=id&category=sports&apiKey=${YOUR_API_NEWS_KEY}`;
 
+const options = {
+    method: 'GET',
+    url: 'https://weatherbit-v1-mashape.p.rapidapi.com/forecast/minutely',
+    params: {lat: '-7.983908', lon: '112.621391', units: 'metric'},
+    headers: {
+      'X-RapidAPI-Key': '04126a968amsh05ffd5a00aebf14p1b24a3jsn9ba3d54121c3',
+      'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com'
+    }
+};
+
+const ThirdBody = () => {    
+    
     const [data, setData] = useState([]);
     useEffect(() => {
-        const getData = async () => {
-            const res = await axios.get(url);
-            console.log(res);
-            setData(res.data.articles);
-        }
-        getData();
-    }, [])
+        axios.request(options)
+        .then(function (response) {
+            console.log(response.data);
+            setData(response.data.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
+    }, []);
+
     return (
         <>
-        <div className='thirdBody' id='news'>
-            <h1 className='titleThird'>News</h1>
+        <div className='thirdBody' id='weather'>
+            <h1 className='titleThird'>Weather</h1>
             <div className='container'>
                 <div className='row'>
-                {
+                {   
                     data.map((value) => {
-                    return(
-                        <div className='col-3 sizeColumn'>
-                            <a href={value.url} className='linkStyle'>
-                                <Card className='cardStyle'>
-                                    <Card.Img variant="top" src={value.urlToImage} />
-                                    <Card.Body>
-                                        <Card.Title>{value.title}</Card.Title>
-                                        <Card.Text>
-                                        {value.description}
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                            </a>
-                        </div>
-                    );
-                })
+                        return(
+                            <div className='col-3 sizeColumn'>
+                                    <Card className='cardStyle'>
+                                        <Card.Body>
+                                            <Card.Title className='cardText'><strong>MALANG</strong></Card.Title>
+                                            <Card.Text className='cardText'><strong>Timestamp UTC:</strong></Card.Text>
+                                            <Card.Text className='cardText'>{value.timestamp_utc}</Card.Text>
+                                            <Card.Text className='cardText'><strong>Timestamp Local:</strong></Card.Text>
+                                            <Card.Text className='cardText'>{value.timestamp_local}</Card.Text>
+                                            <Card.Text className='cardText'><strong>Temperature:</strong> {value.temp}</Card.Text>
+                                            <Card.Text className='cardText'><strong>Ts:</strong> {value.ts}</Card.Text>
+                                            <Card.Text className='cardText'><strong>Precip:</strong> {value.precip}</Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                            </div>
+                        );
+                    })
                 }
                 </div>
             </div>

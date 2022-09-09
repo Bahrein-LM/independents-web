@@ -12,7 +12,7 @@ class NavbarComponent extends Component {
                 </Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link href="#about"><strong>About</strong></Nav.Link>
-                    <Nav.Link href="#news"><strong>News</strong></Nav.Link>
+                    <Nav.Link href="#weather"><strong>Weather</strong></Nav.Link>
                     <Nav.Link href="#maps"><strong>Maps</strong></Nav.Link>
                 </Nav>
                 </Container>
